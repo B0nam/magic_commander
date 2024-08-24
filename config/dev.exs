@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :magic_commander, MagicCommander.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "magiccommander",
+  password: "magicpasswd",
   hostname: "localhost",
   database: "magic_commander_dev",
   stacktrace: true,

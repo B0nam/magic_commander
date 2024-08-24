@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16.2-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d magic_commander_dev -U magiccommander"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_USER: magiccommander
+      POSTGRES_PASSWORD: magicpasswd
+      POSTGRES_DB: magic_commander_dev
+    ports:
+      - 5432:5432
