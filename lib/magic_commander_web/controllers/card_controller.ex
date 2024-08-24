@@ -1,6 +1,7 @@
 defmodule MagicCommanderWeb.CardController do
   use MagicCommanderWeb, :controller
 
+  alias MagicCommander.ApiClient
   alias MagicCommander.Cards
   alias MagicCommander.Cards.Card
 
@@ -38,6 +39,20 @@ defmodule MagicCommanderWeb.CardController do
 
     with {:ok, %Card{}} <- Cards.delete_card(card) do
       send_resp(conn, :no_content, "")
+    end
+  end
+
+  def find(conn, %{"name" => name}) do
+    case ApiClient.get_card_by_name(name) do
+      {:ok, card} ->
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(:ok, Jason.encode!(card))
+
+      {:error, reason} ->
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(:bad_request, Jason.encode!(%{error: reason}))
     end
   end
 end
