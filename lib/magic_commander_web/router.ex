@@ -17,10 +17,10 @@ defmodule MagicCommanderWeb.Router do
     post "/cards", CardController, :create
     get "/cards/find/:name", CardController, :find
 
-    get "/decks", DeckCardController, :index
-    get "/decks/:id", DeckCardController, :show
-    post "/decks", DeckCardController, :create
-    delete "/decks", DeckCardController, :delete
+    get "/decks", DeckController, :index
+    get "/decks/:id", DeckController, :show
+    post "/decks", DeckController, :create
+    delete "/decks", DeckController, :delete
 
     post "/decks/:id/populate", DeckCardController, :populate
     post "/decks/:id/import", DeckCardController, :import

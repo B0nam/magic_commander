@@ -3,6 +3,9 @@ defmodule MagicCommanderWeb.DeckController do
 
   alias MagicCommander.Decks
   alias MagicCommander.Decks.Deck
+  alias MagicCommander.Cards
+  alias MagicCommander.Cards.Card
+  alias MagicCommander.ApiClient
 
   action_fallback MagicCommanderWeb.FallbackController
 
@@ -11,12 +14,36 @@ defmodule MagicCommanderWeb.DeckController do
     render(conn, :index, decks: decks)
   end
 
-  def create(conn, %{"deck" => deck_params}) do
-    with {:ok, %Deck{} = deck} <- Decks.create_deck(deck_params) do
-      conn
-      |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/decks/#{deck}")
-      |> render(:show, deck: deck)
+  def create(conn, deck_params) do
+    case ApiClient.get_card_by_name(deck_params["commander_name"]) do
+      {:ok, card_data} ->
+        if card_data[:legal_in_commander] do
+          updated_card_data = Map.put(card_data, :is_commander, true)
+
+          with {:ok, %Card{} = commander_card} <- Cards.create_card(updated_card_data),
+               deck_params <-
+                 Map.put(deck_params, "commander_card_id", commander_card.id),
+               {:ok, %Deck{} = deck} <- Decks.create_deck(deck_params) do
+            conn
+            |> put_status(:created)
+            |> put_resp_content_type("application/json")
+            |> json(%{message: "Success to create new deck!", deck: deck.id})
+          else
+            {:error, reason} ->
+              conn
+              |> put_status(:unprocessable_entity)
+              |> json(%{error: "Failed to create deck: #{reason}"})
+          end
+        else
+          conn
+          |> put_status(:unprocessable_entity)
+          |> json(%{error: "#{deck_params["commander_name"]} cannot be used as a commander."})
+        end
+
+      {:error, reason} ->
+        conn
+        |> put_status(:not_found)
+        |> json(%{error: "Commander not found: #{reason}"})
     end
   end
 
