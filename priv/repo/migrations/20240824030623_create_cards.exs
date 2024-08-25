@@ -7,7 +7,7 @@ defmodule MagicCommander.Repo.Migrations.CreateCards do
       add :magic_card_id, :string
       add :name, :string
       add :mana_cost, :string
-      add :cmc, :integer
+      add :cmc, :float
       add :type_line, :string
       add :oracle_text, :text
       add :power, :string

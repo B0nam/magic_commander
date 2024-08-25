@@ -8,7 +8,7 @@ defmodule MagicCommander.Cards.Card do
     field :name, :string
     field :magic_card_id, :string
     field :mana_cost, :string
-    field :cmc, :integer
+    field :cmc, :float
     field :type_line, :string
     field :oracle_text, :string
     field :power, :string
@@ -26,6 +26,6 @@ defmodule MagicCommander.Cards.Card do
   def changeset(card, attrs) do
     card
     |> cast(attrs, [:magic_card_id, :name, :mana_cost, :cmc, :type_line, :oracle_text, :power, :toughness, :color_identity, :legal_in_commander, :set_name, :rarity, :is_commander])
-    |> validate_required([:magic_card_id, :name, :mana_cost, :cmc, :type_line, :oracle_text, :power, :toughness, :color_identity, :legal_in_commander, :set_name, :rarity, :is_commander])
+    |> validate_required([:magic_card_id, :name, :type_line, :oracle_text, :color_identity, :legal_in_commander, :set_name, :rarity, :is_commander])
   end
 end
