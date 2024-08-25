@@ -12,14 +12,21 @@ defmodule MagicCommanderWeb.CardController do
     render(conn, :index, cards: cards)
   end
 
-  def create(conn, %{"card" => card_params}) do
+  def create(conn, card_params) do
     with {:ok, %Card{} = card} <- Cards.create_card(card_params) do
       conn
       |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/cards/#{card}")
-      |> render(:show, card: card)
+      |> put_resp_content_type("application/json")
+      |> json(%{message: "Success to create new card!", card: card.id})
+    else
+      {:error, changeset} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> put_resp_content_type("application/json")
+        |> json(%{error: "Failed to create card", details: changeset})
     end
   end
+
 
   def show(conn, %{"id" => id}) do
     card = Cards.get_card!(id)
