@@ -1,6 +1,7 @@
 defmodule MagicCommanderWeb.DeckController do
   use MagicCommanderWeb, :controller
 
+  alias MagicCommander.CardFormatter
   alias MagicCommander.Decks
   alias MagicCommander.Decks.Deck
   alias MagicCommander.Cards
@@ -67,4 +68,42 @@ defmodule MagicCommanderWeb.DeckController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def populate(conn, %{"id" => id}) do
+    deck = Decks.get_deck!(id)
+
+    case ApiClient.get_cards_by_commander(deck.commander_name) do
+      {:ok, cards} ->
+        Decks.remove_cards_from_deck(id)
+
+        Enum.each(cards, fn card ->
+          case Cards.create_card(card) do
+            {:ok, new_card} ->
+              Decks.add_card_to_deck(id, new_card.id)
+
+            {:error, changeset} ->
+              IO.puts("Error creating card: #{inspect(changeset.errors)}")
+          end
+        end)
+
+        case Decks.get_deck_with_cards(id) do
+          {:ok, updated_deck} ->
+            conn
+            |> put_status(:ok)
+            |> put_resp_content_type("application/json")
+            |> json(%{message: "Success to populate deck!", deck: id})
+
+          {:error, reason} ->
+            conn
+            |> put_status(:unprocessable_entity)
+            |> json(%{error: reason})
+        end
+
+      {:error, reason} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> json(%{error: reason})
+    end
+  end
+
 end

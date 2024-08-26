@@ -22,9 +22,9 @@ defmodule MagicCommanderWeb.Router do
     post "/decks", DeckController, :create
     delete "/decks", DeckController, :delete
 
-    post "/decks/:id/populate", DeckCardController, :populate
-    post "/decks/:id/import", DeckCardController, :import
-    get "/decks/:id/export", DeckCardController, :expor
+    post "/decks/:id/populate", DeckController, :populate
+    post "/decks/:id/import", DeckController, :import
+    get "/decks/:id/export", DeckController, :expor
 
   end
 end
