@@ -5,6 +5,10 @@ defmodule MagicCommanderWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug MagicCommander.GuardianPipeline
+  end
+
   scope "/", MagicCommanderWeb do
     get "/", DefaultController, :index
   end
@@ -19,6 +23,10 @@ defmodule MagicCommanderWeb.Router do
     get "/cards/:id", CardController, :show
     post "/cards", CardController, :create
     get "/cards/find/:name", CardController, :find
+  end
+
+  scope "/api", MagicCommanderWeb do
+    pipe_through [:api, :auth]
 
     get "/decks", DeckController, :index
     get "/decks/:id", DeckController, :show
@@ -28,6 +36,5 @@ defmodule MagicCommanderWeb.Router do
     post "/decks/:id/populate", DeckController, :populate
     post "/decks/:id/import", DeckController, :import
     get "/decks/:id/export", DeckController, :expor
-
   end
 end
