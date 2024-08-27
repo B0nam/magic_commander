@@ -12,6 +12,9 @@ defmodule MagicCommanderWeb.Router do
   scope "/api", MagicCommanderWeb do
     pipe_through :api
 
+    post "/accounts/register", AccountController, :create
+    post "/accounts/signin", AccountController, :sign_in
+
     get "/cards", CardController, :index
     get "/cards/:id", CardController, :show
     post "/cards", CardController, :create

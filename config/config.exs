@@ -30,6 +30,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :magic_commander, MagicCommander.Guardian,
+    issuer: "magic_commander",
+    secret_key: "FL9EGGCSjWUh4sfoISZPxWHVcsjOY8I9c+OjGydAfc0Sais4CB0USlI43OPrRW0N"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

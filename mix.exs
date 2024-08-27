@@ -43,7 +43,9 @@ defmodule MagicCommander.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:httpoison, "~> 2.0"},
-      {:poison, "~> 6.0"}
+      {:poison, "~> 6.0"},
+      {:guardian, "~> 2.0"},
+      {:bcrypt_elixir, "~> 3.1.0"}
     ]
   end
 
