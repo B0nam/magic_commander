@@ -35,6 +35,6 @@ defmodule MagicCommanderWeb.Router do
 
     post "/decks/:id/populate", DeckController, :populate
     post "/decks/:id/import", DeckController, :import
-    get "/decks/:id/export", DeckController, :expor
+    get "/decks/:id/export", DeckController, :export
   end
 end

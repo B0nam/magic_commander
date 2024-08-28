@@ -2,6 +2,7 @@ defmodule MagicCommander.Cards.Card do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, only: [:id, :name, :magic_card_id, :mana_cost, :cmc, :type_line, :oracle_text, :power, :toughness, :color_identity, :legal_in_commander, :set_name, :rarity, :is_commander]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "cards" do

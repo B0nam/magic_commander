@@ -32,11 +32,6 @@ defmodule MagicCommander.Decks do
     end
   end
 
-  @spec create_deck(
-          :invalid
-          | %{optional(:__struct__) => none(), optional(atom() | binary()) => any()}
-        ) :: any()
-
   def create_deck(attrs \\ %{}) do
     %Deck{}
     |> Deck.changeset(attrs)

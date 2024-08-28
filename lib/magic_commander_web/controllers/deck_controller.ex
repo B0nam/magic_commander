@@ -87,7 +87,7 @@ defmodule MagicCommanderWeb.DeckController do
         end)
 
         case Decks.get_deck_with_cards(id) do
-          {:ok, updated_deck} ->
+          {:ok, _updated_deck} ->
             conn
             |> put_status(:ok)
             |> put_resp_content_type("application/json")
@@ -106,4 +106,22 @@ defmodule MagicCommanderWeb.DeckController do
     end
   end
 
+  def export(conn, %{"id" => id}) do
+    case Decks.get_deck_with_cards(id) do
+      {:ok, deck} ->
+        formatted_cards =
+          deck.cards
+          |> Enum.map(&CardFormatter.format_card_to_export/1)
+
+        conn
+        |> put_status(:ok)
+        |> put_resp_content_type("application/json")
+        |> json(%{cards: formatted_cards})
+
+      {:error, reason} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> json(%{error: reason})
+    end
+  end
 end
