@@ -124,4 +124,33 @@ defmodule MagicCommanderWeb.DeckController do
         |> json(%{error: reason})
     end
   end
+
+  def import(conn, %{"id" => id, "cards" => cards_params}) do
+    _deck = Decks.get_deck!(id)
+
+    Decks.remove_cards_from_deck(id)
+
+    Enum.each(cards_params, fn card_params ->
+      with {:ok, %Card{} = card} <- Cards.create_card(card_params),
+           {:ok, _deck_card} <- Decks.add_card_to_deck(id, card.id) do
+        :ok
+      else
+        {:error, changeset} ->
+          IO.puts("Error creating or adding card to deck: #{inspect(changeset.errors)}")
+      end
+    end)
+
+    case Decks.get_deck_with_cards(id) do
+      {:ok, _updated_deck} ->
+        conn
+        |> put_status(:ok)
+        |> put_resp_content_type("application/json")
+        |> json(%{message: "Success to import cards into deck!", deck: id})
+
+      {:error, reason} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> json(%{error: reason})
+    end
+  end
 end
