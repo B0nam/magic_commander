@@ -39,9 +39,8 @@ defmodule MagicCommander.Guardian do
   end
 
   defp create_token(account) do
-    {:ok, token, _full_claims} =
-      encode_and_sign(account)
-
+    _claims = %{"role" => account.role}
+    {:ok, token, _full_claims} = encode_and_sign(account)
     {:ok, account, token}
  end
 end

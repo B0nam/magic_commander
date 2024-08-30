@@ -5,7 +5,6 @@ defmodule MagicCommander.Accounts do
 
   import Ecto.Query, warn: false
   alias MagicCommander.Repo
-
   alias MagicCommander.Accounts.Account
 
   @doc """
@@ -104,5 +103,5 @@ defmodule MagicCommander.Accounts do
 
   def get_account_by_email(email) do
     Repo.get_by(Account, email: email)
- end
+  end
 end

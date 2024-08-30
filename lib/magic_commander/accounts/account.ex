@@ -1,5 +1,4 @@
 defmodule MagicCommander.Accounts.Account do
-  alias Ecto.Changeset
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -8,6 +7,7 @@ defmodule MagicCommander.Accounts.Account do
   schema "accounts" do
     field :email, :string
     field :hash_password, :string
+    field :role, :string, default: "user"
 
     timestamps()
   end
@@ -23,7 +23,7 @@ defmodule MagicCommander.Accounts.Account do
   @doc false
   def changeset(account, attrs) do
     account
-    |> cast(attrs, [:email, :hash_password])
+    |> cast(attrs, [:email, :hash_password, :role])
     |> validate_required([:email, :hash_password])
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)

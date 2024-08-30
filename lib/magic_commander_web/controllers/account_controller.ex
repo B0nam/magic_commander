@@ -12,16 +12,15 @@ defmodule MagicCommanderWeb.AccountController do
     render(conn, :index, accounts: accounts)
   end
 
-def create(conn, %{"account" => account_params}) do
+  def create(conn, %{"account" => account_params}) do
     with {:ok, %Account{} = account} <- Accounts.create_account(account_params),
          {:ok, token, _full_claims} <- Guardian.encode_and_sign(account) do
       conn
       |> put_status(:created)
       |> put_resp_content_type("application/json")
-      |> json(%{message: "Success to create account!", account: account.email, token: token})
-
+      |> json(%{message: "Account created successfully!", account: account.email, token: token})
     end
-end
+  end
 
   def show(conn, %{"id" => id}) do
     account = Accounts.get_account!(id)
@@ -45,17 +44,17 @@ end
   end
 
   def sign_in(conn, %{"account" => %{"email" => email, "hash_password" => hash_password}}) do
-    case MagicCommander.Guardian.authenticate(email, hash_password) do
+    case Guardian.authenticate(email, hash_password) do
       {:ok, account, token} ->
         conn
         |> put_status(:ok)
         |> put_resp_content_type("application/json")
-        |> json(%{message: "Success to login!", account: account.email, token: token})
+        |> json(%{message: "Login successful!", account: account.email, token: token})
 
       {:error, _reason} ->
         conn
         |> put_resp_content_type("application/json")
-        |> send_resp(:unauthorized, Jason.encode!(%{error: "invalid credentials"}))
+        |> send_resp(:unauthorized, Jason.encode!(%{error: "Invalid credentials"}))
     end
   end
 end
