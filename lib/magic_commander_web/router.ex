@@ -17,6 +17,10 @@ defmodule MagicCommanderWeb.Router do
     plug MagicCommander.GuardianPipeline.EnsureRole, "moderador"
   end
 
+  pipeline :admin_role do
+    plug MagicCommander.GuardianPipeline.EnsureRole, "admin"
+  end
+
   scope "/", MagicCommanderWeb do
     get "/", DefaultController, :index
   end
@@ -29,7 +33,7 @@ defmodule MagicCommanderWeb.Router do
   end
 
   scope "/api", MagicCommanderWeb do
-    pipe_through [:api, :auth, :usuario_role]
+    pipe_through [:api, :auth, :usuario_role, :admin_role]
 
     get "/cards", CardController, :index
     get "/cards/:id", CardController, :show
@@ -42,7 +46,7 @@ defmodule MagicCommanderWeb.Router do
   end
 
   scope "/api", MagicCommanderWeb do
-    pipe_through [:api, :auth, :moderador_role]
+    pipe_through [:api, :auth, :moderador_role, :admin_role]
 
     post "/cards", CardController, :create
     post "/decks/:id/import", DeckController, :import
