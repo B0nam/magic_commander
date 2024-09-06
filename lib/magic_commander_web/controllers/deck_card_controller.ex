@@ -11,15 +11,6 @@ defmodule MagicCommanderWeb.DeckCardController do
     render(conn, :index, deck_cards: deck_cards)
   end
 
-  def create(conn, %{"deck_card" => deck_card_params}) do
-    with {:ok, %DeckCard{} = deck_card} <- DeckCards.create_deck_card(deck_card_params) do
-      conn
-      |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/deck_cards/#{deck_card}")
-      |> render(:show, deck_card: deck_card)
-    end
-  end
-
   def show(conn, %{"id" => id}) do
     deck_card = DeckCards.get_deck_card!(id)
     render(conn, :show, deck_card: deck_card)

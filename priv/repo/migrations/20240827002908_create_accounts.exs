@@ -6,6 +6,7 @@ defmodule MagicCommander.Repo.Migrations.CreateAccounts do
       add :id, :binary_id, primary_key: true
       add :email, :string
       add :hash_password, :text
+      add :role, :string
 
       timestamps(type: :utc_datetime)
     end
