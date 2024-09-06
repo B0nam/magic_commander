@@ -122,10 +122,13 @@ Link para a documentação: https://docs.magicthegathering.io/#documentationrate
 Você pode realizar a atividade em qualquer linguagem de programação.
 
 CRUD do usuário no banco
+
 `[FEITO] Foi realizado o crud de usuarios`
 
 Criptografia da senha
+
 `[FEITO] Foi realizado a criptografia da senha com hashing`
 
 Diagrama de Classe da aplicação
+
 `[FEITO] Diagrama de classes mostrado anteriormente`
