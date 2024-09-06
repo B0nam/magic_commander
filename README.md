@@ -7,7 +7,6 @@ Atividade avaliativa para a disciplina de Desafio Profissional VI do 6º semestr
 
 Desenvolvido por **Daniel Bonam Rissardi (22013838-2)**
 
-
 Todo o projeto foi desenvolvido em Elixir com o framework Phoenix
 
 ![image](https://github.com/user-attachments/assets/fed658ed-5ecf-4992-a3d3-14b8b56b8263)
@@ -25,8 +24,6 @@ Todo o projeto foi desenvolvido em Elixir com o framework Phoenix
 ## Visão Geral
 
 Magic Commander é uma aplicação rest api para gerar decks do jogo de cartas magic. Os decks gerados são destinados ao modo de jogo Commander, onde há uma carta central e as cartas auxiliares que seguem o padrão da carta central.
-
-`[Observação] Caso o jogador não tenha completado a MD10 da season, não é posivel mostrar as informações de Vitória, Derrota, KD e Rank.`
 
 ## Tecnologias utilizadas
 
