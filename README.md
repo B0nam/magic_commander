@@ -7,6 +7,11 @@ Atividade avaliativa para a disciplina de Desafio Profissional VI do 6º semestr
 
 Desenvolvido por **Daniel Bonam Rissardi (22013838-2)**
 
+
+Todo o projeto foi desenvolvido em Elixir com o framework Phoenix
+
+![image](https://github.com/user-attachments/assets/fed658ed-5ecf-4992-a3d3-14b8b56b8263)
+
 ## Sumário
 
 - Visão geral
@@ -20,8 +25,6 @@ Desenvolvido por **Daniel Bonam Rissardi (22013838-2)**
 ## Visão Geral
 
 Magic Commander é uma aplicação rest api para gerar decks do jogo de cartas magic. Os decks gerados são destinados ao modo de jogo Commander, onde há uma carta central e as cartas auxiliares que seguem o padrão da carta central.
-
-Todo o projeto foi desenvolvido em Elixir com o framework Phoenix
 
 `[Observação] Caso o jogador não tenha completado a MD10 da season, não é posivel mostrar as informações de Vitória, Derrota, KD e Rank.`
 
@@ -132,3 +135,22 @@ Criptografia da senha
 Diagrama de Classe da aplicação
 
 `[FEITO] Diagrama de classes mostrado anteriormente`
+
+# MagicCommander
+
+To start your Phoenix server:
+
+  * Run `mix setup` to install and setup dependencies
+  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+## Learn more
+
+  * Official website: https://www.phoenixframework.org/
+  * Guides: https://hexdocs.pm/phoenix/overview.html
+  * Docs: https://hexdocs.pm/phoenix
+  * Forum: https://elixirforum.com/c/phoenix-forum
+  * Source: https://github.com/phoenixframework/phoenix
