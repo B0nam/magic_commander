@@ -11,8 +11,8 @@ defmodule MagicCommander.AccountsFixtures do
     {:ok, account} =
       attrs
       |> Enum.into(%{
-        email: "some email",
-        hash_password: "some hash_password"
+        email: "teste@teste.com",
+        hash_password: "hashpasswd"
       })
       |> MagicCommander.Accounts.create_account()
 

@@ -45,7 +45,8 @@ defmodule MagicCommander.MixProject do
       {:httpoison, "~> 2.0"},
       {:poison, "~> 6.0"},
       {:guardian, "~> 2.0"},
-      {:bcrypt_elixir, "~> 3.1.0"}
+      {:bcrypt_elixir, "~> 3.1.0"},
+      {:mox, "~> 1.0", only: :test}
     ]
   end
 
