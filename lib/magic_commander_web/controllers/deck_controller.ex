@@ -88,6 +88,7 @@ defmodule MagicCommanderWeb.DeckController do
 
         case Decks.get_deck_with_cards(id) do
           {:ok, _updated_deck} ->
+            save_deck_to_file(id)
             conn
             |> put_status(:ok)
             |> put_resp_content_type("application/json")
@@ -153,4 +154,38 @@ defmodule MagicCommanderWeb.DeckController do
         |> json(%{error: reason})
     end
   end
+
+  defp save_deck_to_file(deck_id) do
+    case Decks.get_deck_with_cards(deck_id) do
+      {:ok, deck} ->
+        formatted_cards =
+          deck.cards
+          |> Enum.map(&CardFormatter.format_card_to_export/1)
+
+        timestamp = :os.system_time(:seconds) |> Integer.to_string()
+        file_name = "deck_#{deck_id}_#{timestamp}.json"
+
+        file_path = Path.join(["public", "deck_exports", file_name])
+
+        File.mkdir_p!("public/deck_exports")
+
+        case Jason.encode(%{cards: formatted_cards}) do
+          {:ok, json_data} ->
+            case File.write(file_path, json_data) do
+              :ok ->
+                IO.puts("File successfully written to #{file_path}")
+
+              {:error, reason} ->
+                IO.puts("Error writing file to #{file_path}: #{reason}")
+            end
+
+          {:error, reason} ->
+            IO.puts("Error encoding JSON: #{reason}")
+        end
+
+      {:error, reason} ->
+        IO.puts("Error getting deck with cards for id #{deck_id}: #{reason}")
+    end
+  end
+
 end

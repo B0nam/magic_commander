@@ -1,0 +1,354 @@
+{
+  "cards": [
+    {
+      "id": "c5c8c1a0-9b9d-4c47-a378-9f74e4d5e697",
+      "name": "Gisa, the Glorious",
+      "type": "Legendary Creature",
+      "mana_cost": "{3}{B}{B}",
+      "description": "At the beginning of your upkeep, you may return a creature card from your graveyard to the battlefield with a +1/+1 counter."
+    },
+    {
+      "id": "d56f10d6-4b4d-4d40-bf4b-2239c5177d1c",
+      "name": "Dark Ritual",
+      "type": "Instant",
+      "mana_cost": "{1}{B}",
+      "description": "Add {B}{B}{B} to your mana pool."
+    },
+    {
+      "id": "ec9b1f3e-2d68-4f87-a3e7-cfefb4a90f1d",
+      "name": "Swamp",
+      "type": "Basic Land",
+      "mana_cost": "",
+      "description": "Add {B} to your mana pool."
+    },
+    {
+      "id": "dd3f5db1-1e8f-4d82-973c-f8c6e18dcd8a",
+      "name": "Demonic Tutor",
+      "type": "Sorcery",
+      "mana_cost": "{1}{B}{B}",
+      "description": "Search your library for a card and put that card into your hand."
+    },
+    {
+      "id": "bb56fc98-4ed6-40ee-a47f-9f7595a27cf3",
+      "name": "Toxic Deluge",
+      "type": "Sorcery",
+      "mana_cost": "{2}{B}{B}",
+      "description": "As an additional cost to cast Toxic Deluge, pay X life. All creatures get -X/-X until end of turn."
+    },
+    {
+      "id": "4b545f5a-cf8d-44b8-94d1-29e4f855740d",
+      "name": "Grave Pact",
+      "type": "Enchantment",
+      "mana_cost": "{2}{B}{B}",
+      "description": "Whenever a creature you control dies, each other player sacrifices a creature."
+    },
+    {
+      "id": "6d5192de-ec68-4d6c-9c7e-8a71d2066c3e",
+      "name": "Zombify",
+      "type": "Sorcery",
+      "mana_cost": "{3}{B}",
+      "description": "Return target creature card from your graveyard to the battlefield."
+    },
+    {
+      "id": "5a006a52-8fbd-4c9d-868d-56a0511f8a1e",
+      "name": "Zombie Infestation",
+      "type": "Enchantment",
+      "mana_cost": "{1}{B}",
+      "description": "Discard two cards: Create a 2/2 black Zombie creature token."
+    },
+    {
+      "id": "7d22e4d7-f8b5-4397-9ff4-7b730a9f40d1",
+      "name": "Blood Artist",
+      "type": "Creature",
+      "mana_cost": "{B}",
+      "description": "Whenever Blood Artist or another creature dies, target player loses 1 life and you gain 1 life."
+    },
+    {
+      "id": "b3175d8f-0710-4d57-ae00-69dbd8b90c3b",
+      "name": "Liliana's Reaver",
+      "type": "Creature",
+      "mana_cost": "{2}{B}{B}",
+      "description": "Whenever Liliana's Reaver attacks, defending player discards a card."
+    },
+    {
+      "id": "4e5a62da-03dc-47b4-873f-0a9b5403f9d3",
+      "name": "Read the Bones",
+      "type": "Sorcery",
+      "mana_cost": "{1}{B}{B}",
+      "description": "Scry 2, then draw two cards."
+    },
+    {
+      "id": "e1041d5a-926c-4537-9df1-9470c8138a5f",
+      "name": "Witch's Cottage",
+      "type": "Land",
+      "mana_cost": "",
+      "description": "When Witch's Cottage enters the battlefield tapped, you may return a target creature card from your graveyard to the top of your library."
+    },
+    {
+      "id": "6c92b354-d4c1-4f1e-b423-f2c5c19e6041",
+      "name": "Necromancy",
+      "type": "Enchantment",
+      "mana_cost": "{2}{B}{B}",
+      "description": "You may cast Necromancy as an instant if you pay {B} more. Return target creature card from your graveyard to the battlefield."
+    },
+    {
+      "id": "b7590d26-14a1-499a-a0ed-44c6c2f9cf18",
+      "name": "Corpse Dance",
+      "type": "Sorcery",
+      "mana_cost": "{1}{B}{B}",
+      "description": "Return target creature card from your graveyard to the battlefield. It gains haste until end of turn. Exile it at the beginning of the next end step."
+    },
+    {
+      "id": "4a5b1c6e-3b6e-4d57-bd8f-1749c75d4c85",
+      "name": "Crypt Ghast",
+      "type": "Creature",
+      "mana_cost": "{3}{B}{B}",
+      "description": "Extort. Whenever you cast a spell, you may pay {B}. If you do, each opponent loses 1 life and you gain that much life."
+    },
+    {
+      "id": "ce4e7c79-d1f6-4b1e-abe9-4739de0ff1f2",
+      "name": "Grave Titan",
+      "type": "Creature",
+      "mana_cost": "{4}{B}{B}",
+      "description": "Deathtouch. When Grave Titan enters the battlefield, put two 2/2 black Zombie creature tokens onto the battlefield."
+    },
+    {
+      "id": "44baf6f7-58ae-4e6c-80e6-930f92f3df71",
+      "name": "Liliana, the Last Hope",
+      "type": "Planeswalker",
+      "mana_cost": "{1}{B}{B}",
+      "description": "Target player discards a card. Put a -1/-1 counter on up to one target creature."
+    },
+    {
+      "id": "c930d3fc-df9b-4516-96b2-9d9a4d7f81cb",
+      "name": "Reanimate",
+      "type": "Sorcery",
+      "mana_cost": "{B}",
+      "description": "Put target creature card from a graveyard onto the battlefield under your control. You lose life equal to its mana cost."
+    },
+    {
+      "id": "7a10c4c3-df92-4b7f-9a54-9a25d9fc048d",
+      "name": "Tainted Pact",
+      "type": "Instant",
+      "mana_cost": "{1}{B}",
+      "description": "Exile the top card of your library. If you do, you may put a card with the same name from your hand onto the battlefield."
+    },
+    {
+      "id": "fb10a2a2-1e0d-4d5d-9a61-7a27d8c938d5",
+      "name": "Dark Confidant",
+      "type": "Creature",
+      "mana_cost": "{1}{B}",
+      "description": "At the beginning of your upkeep, reveal the top card of your library and put that card into your hand. You lose life equal to its converted mana cost."
+    },
+    {
+      "id": "d15b4394-382d-4e1c-80b4-c5c560b3ed42",
+      "name": "Vampiric Tutor",
+      "type": "Instant",
+      "mana_cost": "{B}",
+      "description": "Search your library for a card, then shuffle your library and put that card on top of it. You lose 2 life."
+    },
+    {
+      "id": "94a5e741-b751-4c9e-9c96-d28b6d5f593c",
+      "name": "Bitterblossom",
+      "type": "Enchantment",
+      "mana_cost": "{1}{B}",
+      "description": "At the beginning of your upkeep, create a 1/1 black Faerie Rogue creature token with flying. You lose 1 life."
+    },
+    {
+      "id": "9d4c92e2-d74a-4b6f-bbc8-835fa18cf09f",
+      "name": "Liliana's Caress",
+      "type": "Enchantment",
+      "mana_cost": "{1}{B}",
+      "description": "Whenever an opponent discards a card, Liliana's Caress deals 2 damage to that player."
+    },
+    {
+      "id": "75c4a5de-65ec-45de-a34b-e5a3bb2a4888",
+      "name": "Gravecrawler",
+      "type": "Creature",
+      "mana_cost": "{B}",
+      "description": "Gravecrawler can't block. You may cast Gravecrawler from your graveyard as long as you control a zombie."
+    },
+    {
+      "id": "891a5c79-9ef2-4a77-a017-65b028a527b4",
+      "name": "Undying Evil",
+      "type": "Instant",
+      "mana_cost": "{B}",
+      "description": "Target creature you control gains indestructible until end of turn. If that creature would die this turn, return it to the battlefield under your control instead."
+    },
+    {
+      "id": "f5e1d08a-2e8d-4e9e-a008-d25c4e568ba7",
+      "name": "Cabal Therapy",
+      "type": "Sorcery",
+      "mana_cost": "{B}",
+      "description": "Name a nonland card. Target player reveals their hand and discards all cards with that name."
+    },
+    {
+      "id": "3ae3c7ec-9bb7-40ec-9086-5f6a4f4f5cf3",
+      "name": "Golgari Thug",
+      "type": "Creature",
+      "mana_cost": "{1}{B}{G}",
+      "description": "When Golgari Thug dies, put a +1/+1 counter on target creature you control."
+    },
+    {
+      "id": "c60797b1-d1f8-46c8-94b2-2ae62a891550",
+      "name": "Mutilate",
+      "type": "Sorcery",
+      "mana_cost": "{2}{B}{B}",
+      "description": "All creatures get -1/-1 for each Swamp you control."
+    },
+    {
+      "id": "e21b780f-d9ab-44ec-8a2e-1f2ab6e14a99",
+      "name": "Doom Blade",
+      "type": "Instant",
+      "mana_cost": "{B}{B}",
+      "description": "Destroy target nonblack creature."
+    },
+    {
+      "id": "80a3a08b-2fa4-4698-b61f-61c5c41a1a4c",
+      "name": "Black Market",
+      "type": "Enchantmen",
+      "mana_cost": "{3}{B}",
+      "description": "Whenever a creature dies, put a black mana token on Black Market."
+    },
+    {
+      "id": "0b534ec8-6c14-4b7b-8b2d-9b2e1ad46a5c",
+      "name": "Bone Splinters",
+      "type": "Instant",
+      "mana_cost": "{B}",
+      "description": "As an additional cost to cast Bone Splinters, sacrifice a creature. Destroy target creature."
+    },
+    {
+      "id": "f29986c1-993b-4f77-9d53-b530abf4b946",
+      "name": "Phage the Untouchable",
+      "type": "Creature",
+      "mana_cost": "{3}{B}{B}{B}",
+      "description": "When Phage the Untouchable enters the battlefield, if you didn’t cast it from your hand, you lose the game."
+    },
+    {
+      "id": "7b2c83e2-b82b-4d2c-8f87-b36e62b1ff1a",
+      "name": "Kuro, Pitlord",
+      "type": "Creature",
+      "mana_cost": "{4}{B}{B}{B}",
+      "description": "Flying. At the beginning of your upkeep, you lose 7 life."
+    },
+    {
+      "id": "bf21b9da-1f32-4d62-8e6d-005832c83c93",
+      "name": "Doomed Traveler",
+      "type": "Creature",
+      "mana_cost": "{W}",
+      "description": "When Doomed Traveler dies, create a 1/1 white Spirit creature token with flying."
+    },
+    {
+      "id": "2baf8d54-b16a-40fc-b22b-1c3064e0c31d",
+      "name": "Carnival of Souls",
+      "type": "Enchantment",
+      "mana_cost": "{1}{B}",
+      "description": "Whenever a creature dies, add {B} to your mana pool."
+    },
+    {
+      "id": "d08f1c9e-bd6d-41b2-b4d4-6f7e0631c045",
+      "name": "Darksteel Pendant",
+      "type": "Artifact",
+      "mana_cost": "{1}",
+      "description": "You may look at the top card of your library any time. You may put that card on the bottom of your library."
+    },
+    {
+      "id": "b26407e8-bc63-4b78-b1c5-3ae7861cf799",
+      "name": "Gorgon Recluse",
+      "type": "Creature",
+      "mana_cost": "{2}{B}",
+      "description": "Deathtouch. When Gorgon Recluse dies, return target creature card from your graveyard to your hand."
+    },
+    {
+      "id": "09dbab5e-93e2-4516-97b5-06e6f9c0b52b",
+      "name": "Tainted Well",
+      "type": "Land",
+      "mana_cost": "",
+      "description": "Add {B} or {C}. If you control a Swamp, add {B}."
+    },
+    {
+      "id": "39ae8b68-084c-4868-94a6-9cf9ae3e8b64",
+      "name": "Murder",
+      "type": "Instant",
+      "mana_cost": "{B}{B}",
+      "description": "Destroy target creature. It can't be regenerated."
+    },
+    {
+      "id": "da64dff5-d867-4d18-b535-16e9d2e88a4f",
+      "name": "Kuro, Pitlord",
+      "type": "Creature",
+      "mana_cost": "{4}{B}{B}{B}",
+      "description": "Flying. At the beginning of your upkeep, you lose 7 life."
+    },
+    {
+      "id": "5b008a1e-2d36-4739-9b28-82c6c759b85c",
+      "name": "Dark Deal",
+      "type": "Sorcery",
+      "mana_cost": "{1}{B}{B}",
+      "description": "Each player discards their hand, then draws cards equal to the number of cards they discarded this way."
+    },
+    {
+      "id": "02d3d3e4-7c7d-46fc-b4ec-563fa0ae7a58",
+      "name": "Tainted Isle",
+      "type": "Land",
+      "mana_cost": "",
+      "description": "Add {B} or {C}. If you control a Swamp, add {B}."
+    },
+    {
+      "id": "e3d3a2b3-b6a6-4c46-84b7-87d5f026cf60",
+      "name": "Gravebreaker Lamia",
+      "type": "Creature",
+      "mana_cost": "{2}{B}{B}",
+      "description": "When Gravebreaker Lamia enters the battlefield, you may discard a card. If you do, search your library for a card and put that card into your graveyard."
+    },
+    {
+      "id": "cb7d77ff-df1b-43d1-9cbb-69e9b3b0c26e",
+      "name": "Necropotence",
+      "type": "Enchantment",
+      "mana_cost": "{B}{B}",
+      "description": "Skip your draw step. Whenever you would draw a card, you may pay 1 life. If you do, put that card into your hand."
+    },
+    {
+      "id": "35766326-67a1-4b99-bf5e-9f4378d5e6c1",
+      "name": "Phyrexian Arena",
+      "type": "Enchantment",
+      "mana_cost": "{1}{B}",
+      "description": "At the beginning of your upkeep, you draw a card and you lose 1 life."
+    },
+    {
+      "id": "cb1ff54e-0fc3-4a85-a9da-bfe8504b0b4a",
+      "name": "Bitterblossom",
+      "type": "Enchantment",
+      "mana_cost": "{1}{B}",
+      "description": "At the beginning of your upkeep, create a 1/1 black Faerie Rogue creature token with flying. You lose 1 life."
+    },
+    {
+      "id": "4a6180cb-8492-4d34-a645-e4395e0fcd46",
+      "name": "Bloodghast",
+      "type": "Creature",
+      "mana_cost": "{B}{B}",
+      "description": "Bloodghast can't block. Whenever Bloodghast returns to the battlefield from your graveyard, return it to the battlefield tapped and attacking."
+    },
+    {
+      "id": "0fdba545-bc32-4535-8f79-7f0989d5d4a4",
+      "name": "Erebos's Intervention",
+      "type": "Instant",
+      "mana_cost": "{X}{B}",
+      "description": "Choose one — Target creature gets -X/-X until end of turn; or return target creature card from your graveyard to your hand."
+    },
+    {
+      "id": "94b32e77-5e89-4828-b1d1-1b4f73fd9d43",
+      "name": "Mutilate",
+      "type": "Sorcery",
+      "mana_cost": "{2}{B}{B}",
+      "description": "All creatures get -1/-1 for each Swamp you control."
+    },
+    {
+      "id": "1b7ebc27-d894-4633-b012-d0d8eae2e0a3",
+      "name": "Grave Pact",
+      "type": "Enchantment",
+      "mana_cost": "{2}{B}{B}",
+      "description": "Whenever a creature you control dies, each other player sacrifices a creature."
+    }
+  ]
+}

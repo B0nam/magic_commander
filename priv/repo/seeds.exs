@@ -1,11 +1,20 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     MagicCommander.Repo.insert!(%MagicCommander.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias MagicCommander.Repo
+alias MagicCommander.Accounts.Account
+
+admin_params = %{
+  email: "admin@admin.com",
+  hash_password: "admin123@",
+  role: "admin"
+}
+
+case Repo.get_by(Account, email: "admin@admin.com") do
+  nil ->
+    %Account{}
+    |> Account.changeset(admin_params)
+    |> Repo.insert!()
+
+    IO.puts("Usuário admin criado com sucesso!")
+
+  _ ->
+    IO.puts("Usuário admin já existe. Nenhuma ação tomada.")
+end
