@@ -60,7 +60,7 @@ Os testes unitários foram desenvolvidos para a classe que possui a regra de neg
 ![image](https://github.com/user-attachments/assets/4b63c18a-0a66-45e1-b603-b79de2647daf)
 
 ## Build
-Para subir o projeto basta executar o seguinte comando dentro da pasta do repositório: `docker-compose up --build`, desta forma a aplicação pode ser acessada por `http://localhost:4000`
+Para subir o projeto é necessário subir o banco de dados postgres usando o `docker compose up` demais instruções da execução do phoenix estão no final do arquivo.
 
 ## Rotas
 Todas as rotas do sistema podem ser encontradas em `/magic_commander/lib/magic_commander_web/router.ex`. Todas as rotas principais estão definidas dentro de /api ou seja, para buscar uma carta, utilize /api/cards/find/:name 
